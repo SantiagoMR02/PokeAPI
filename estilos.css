@@ -1,0 +1,100 @@
+@charset "UTF-8";
+:root {
+  --dark-cyan: hsl(177, 73%, 40%);
+  --very-dark: hsl(180, 26%, 30%);
+  --dark-gray: hsl(227, 10%, 46%);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.img {
+  height: 100px;
+  width: 300px;
+  display: center;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  background-color: var(--dark-cyan);
+  background-image: url("../images/bg-pattern-top.svg"), url("../images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-flow: column wrap;
+  height: 100vh;
+  margin-left: 8px;
+  margin-right: 5px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Ajusta la altura según sea necesario */
+  margin-bottom: -20px;
+}
+
+header .img {
+  max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.container {
+  display: flex-start;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card {
+  background-color: white;
+  width: 240px;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.322);
+}
+.card-header {
+  width: 100%;
+  display: block;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid var(--dark-gray);
+  border-radius: 50px;
+}
+.card-body-img {
+  border-radius: 100%;
+  margin-top: -50px;
+}
+.card-body-name {
+  font-size: 15px;
+  color: var(--dark-gray);
+  font-weight: 400;
+}
+.card-body-name span {
+  color: black;
+  font-weight: 700;
+}
+.card-body-text {
+  margin-top: -10px;
+  font-size: 12px;
+}
+.card-footer {
+  display: flex;
+  justify-content: space-evenly;
+}/*# sourceMappingURL=estilos.css.map */
