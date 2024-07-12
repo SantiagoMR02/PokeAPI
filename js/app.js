@@ -4,31 +4,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const fetchdata = async () => {
     try {
-        const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10');//utilizacion de la API
-        const data = await res.json(); //Se obtiene el resultado de la llamada de la APi y se convierte a Json
+        const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10');
+        const data = await res.json();
         const promises = data.results.map(async (pokemon) => {
             const res = await fetch(pokemon.url);
             return await res.json();
         });
         const detailedPokemonData = await Promise.all(promises);
+        
+        // Ordena por ID
         const sortedPokemonData = detailedPokemonData.sort((a, b) => a.id - b.id);
+
+
         sortedPokemonData.forEach(pokemon => dataCard(pokemon));
     } catch (error) {
         console.log(error);
     }
 };
-//Recojo los datos de todas las debilidades del pokemon
+
 const fetchWeakness = async (typeUrl) => {
     try {
         const res = await fetch(typeUrl);
         const typeData = await res.json();
         const weaknesses = typeData.damage_relations.double_damage_from.map(type => type.name);
-        return weaknesses.slice(0, 2).join(', '); //Limito a 2 las debilidades
+        return weaknesses.slice(0, 2).join(', '); // Limita a 2 las debilidades
     } catch (error) {
         console.log(error);
     }
 };
-
 const dataCard = async (pokemon) => {
     const flex = document.querySelector('.flex');
     const template = document.querySelector('#template-card').content;
@@ -48,3 +51,4 @@ const dataCard = async (pokemon) => {
     fragment.appendChild(clone);
     flex.appendChild(fragment);
 };
+
