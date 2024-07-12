@@ -68,6 +68,8 @@ header {
     border-radius: 50px;
     overflow: hidden;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.322);
+    animation: rotate 0.6s ease forwards;
+
 
     
     &-header{
@@ -121,9 +123,4 @@ header {
       transform: rotateY(360deg);
       opacity: 1;
   }
-}
-
-.card {
-  /* otras propiedades de .card */
-  animation: rotate 0.6s ease forwards; /* Aplica la animación */
 }
