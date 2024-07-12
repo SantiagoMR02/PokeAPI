@@ -44,7 +44,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px; /* Ajusta la altura según sea necesario */
+  height: 100px;
   margin-bottom: -20px;
 }
 
@@ -57,6 +57,7 @@ header .img {
   display: flex-start;
   justify-content: center;
   align-items: flex-start;
+  margin-left: 10px;
 }
 
 .card {
