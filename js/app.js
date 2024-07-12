@@ -11,10 +11,11 @@ const fetchdata = async () => {
             return await res.json();
         });
         const detailedPokemonData = await Promise.all(promises);
+
         
         // Ordena por ID
         const sortedPokemonData = detailedPokemonData.sort((a, b) => a.id - b.id);
-
+        sortedPokemonData.forEach(pokemon => console.log(pokemon.id));
 
         sortedPokemonData.forEach(pokemon => dataCard(pokemon));
     } catch (error) {
