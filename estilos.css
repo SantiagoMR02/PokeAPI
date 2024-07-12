@@ -19,14 +19,12 @@ html {
 .img {
   height: 100px;
   width: 300px;
-  display: center;
+  display: block;
 }
 
 body {
   font-family: "Kumbh Sans", sans-serif;
   background-color: var(--modify-cyan);
-  background-repeat: no-repeat, no-repeat;
-  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
 }
 
 .flex {
@@ -61,9 +59,10 @@ header .img {
 }
 
 .card {
+  width: 200px;
+  height: 280px;
   text-transform: capitalize;
   background-color: white;
-  width: 240px;
   border-radius: 50px;
   overflow: hidden;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.322);
