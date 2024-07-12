@@ -1,11 +1,12 @@
+//Utilizo SCSS para poder organizar de mejor manera las clases y las subclases
 :root {
-    --dark-cyan: hsl(177, 73%, 40%);
+    --modify-cyan: hsl(177, 62%, 47%);
     --very-dark: hsl(180, 26%, 30%);
     --dark-gray: hsl(227, 10%, 46%);
   }
   html {
     box-sizing: border-box;
-    font-size: 62.5%; // 1 rem = 10 px
+    font-size: 62.5%; 
   }
   *,
   *:before,
@@ -19,17 +20,15 @@
   }
 body{
     font-family: 'Kumbh Sans', sans-serif;
-    background-color: var(--dark-cyan);
-    background-image: url('../images/bg-pattern-top.svg'), url('../images/bg-pattern-bottom.svg');
-    background-repeat: no-repeat, no-repeat;
-    background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+    background-color: var(--modify-cyan);
 
 }
 .flex{
-    display:flex;
-    justify-content: space-evenly;
-    align-items:flex-start;
-    flex-flow: column wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); // crea las cartas con espaciado entre ellas
+    grid-gap: 20px;
+    padding: 20px;
+    justify-content: center;
     height:  100vh;
     margin-left: 8px;
     margin-right: 5px;
@@ -57,6 +56,7 @@ header {
 
 }
 .card{
+  text-transform: capitalize;
     background-color: white;
     width: 240px;
     border-radius: 50px;
@@ -65,6 +65,7 @@ header {
 
     
     &-header{
+        border-bottom: 3px solid black;
         width: 100%;
         display: block;
     }
@@ -76,8 +77,12 @@ header {
         border-radius: 50px;
 
         &-img{
+            border: 3px solid black;
+            background-color: white;
+            width: 125px;
+            height: 125px;
             border-radius: 100%;
-            margin-top: -50px;
+            margin-top: -60px;
         }
         &-name{
             font-size: 15px;
@@ -97,6 +102,7 @@ header {
     &-footer{
         display: flex;
         justify-content:space-evenly;
+        text
 
 
     }  
